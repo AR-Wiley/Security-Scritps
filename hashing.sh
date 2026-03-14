@@ -7,7 +7,7 @@ if [[ $EUID -ne 0 ]]; then
         exit 1
 fi
 
-DIR="/home/awiley805/Documents"
+DIR="/home/user/Documents"
 
 function Get_Hash {
 
@@ -15,7 +15,7 @@ function Get_Hash {
 
         date_today=$(date +"%Y-%m-%d")
 
-        hash_dir="/home/awiley805/hash"
+        hash_dir="/home/user/hash"
 
         declare -a hashes
         hashes+=("$path"/*)
@@ -34,8 +34,8 @@ function Hash_Diff {
         date_today=$(date +"%Y-%m-%d")
         date_yesterday=$(date -d yesterday +"%Y-%m-%d")
 
-        hash_dir="/home/awiley805/hash"
-        hash_diff="/home/awiley805/hash/hash_diff"
+        hash_dir="/home/user/hash"
+        hash_diff="/home/user/hash/hash_diff"
 
         if [[ ! -e "$hash_diff" ]]; then
                 touch "$hash_diff"
