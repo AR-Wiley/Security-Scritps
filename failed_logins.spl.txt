@@ -1,0 +1,8 @@
+index="task4" SharePoInt.exe 
+| table _time Image CommandLine
+
+
+index=web sourcetype=access_combined status>=500
+| stats count by host
+| sort -count
+
